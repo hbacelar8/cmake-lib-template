@@ -1,0 +1,6 @@
+#ifndef _LIBRARY_CONFIG_
+#define _LIBRARY_CONFIG_
+
+#cmakedefine LIBRARY_CONFIG
+
+#endif  // _LIBRARY_CONFIG_

@@ -1,0 +1,70 @@
+{
+  "version": 3,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 22,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "default",
+      "hidden": true,
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build-${presetName}"
+    },
+    {
+      "name": "g++",
+      "hidden": true,
+      "cacheVariables": {
+        "CMAKE_CXX_COMPILER": "g++"
+      }
+    },
+    {
+      "name": "debug",
+      "hidden": true,
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
+    },
+    {
+      "name": "release",
+      "hidden": true,
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    },
+    {
+      "name": "lib-debug-g++",
+      "displayName": "Library Debug Build",
+      "description": "Build the library in debug mode",
+      "inherits": [
+        "default",
+        "debug",
+        "g++"
+      ]
+    },
+    {
+      "name": "lib-release-g++",
+      "displayName": "Library Release Build",
+      "description": "Build the library in release mode",
+      "inherits": [
+        "default",
+        "release",
+        "g++"
+      ]
+    },
+    {
+      "name": "validation-g++",
+      "displayName": "Validation Build",
+      "description": "Build the library's validation test",
+      "inherits": [
+        "default",
+        "debug",
+        "g++"
+      ],
+      "cacheVariables": {
+        "VALIDATION": "ON"
+      }
+    }
+  ]
+}
