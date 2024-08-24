@@ -5,7 +5,7 @@ class Lib
 {
 public:
   /**
-   * @brief Printe number
+   * @brief Print number
    *
    * @param int Number to print
    */
